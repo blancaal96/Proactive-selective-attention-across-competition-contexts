@@ -1,3 +1,4 @@
+%This function calculates the trigger that is needed for that specific cue
 function [ triggerCode ] = calculateCueTrigger( isForced, colorComb, maxProbCong, isTop, cueType, TRIG)
 
 
@@ -31,7 +32,7 @@ if isForced
             end
         end
     end
-    
+
 else
     if colorComb
         if cueType
@@ -49,4 +50,3 @@ else
 end
 
 end
-

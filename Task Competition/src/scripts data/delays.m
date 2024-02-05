@@ -1,10 +1,11 @@
+%This script calculates whether there were delays between two events that needed to be presented sequentially.
 for c= 1:48
-    
+
     for i = 1:48
-        
+
         Delay_cue_jit1(i,c) = ((OUT_E.jitter1Onset(i,c))-(OUT_E.cueOnset(i,c))) - 0.2;
         Delay_jit1_stim(i,c) = (OUT_E.stimOnset(i,c)) - ((OUT_E.jitter1Onset(i,c)) + (EDATA.Jitter1(i,c)));
-        
+
         if BlockType(c)
             if OUT_E.extrafixOnset(i,c) == 0
                 Delay_stim_jit2(i,c) = ((OUT_E.jitter2Onset(i,c)) - (OUT_E.stimOnset(i,c))) - 1;
@@ -21,7 +22,7 @@ for c= 1:48
                 Delay_extrafix_jit2(i,c) = ((OUT_E.jitter2Onset(i,c)) - (OUT_E.extrafixOnset(i,c))) - 0.5;
             end
             Dif_dur_jit2(i,c) = (OUT_E.endofTrial(i,c)) - ((OUT_E.jitter2Onset(i,c)) + (EDATA.Jitter2(i,c)));
-            
+
         end
     end
 end

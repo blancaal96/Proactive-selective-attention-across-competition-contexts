@@ -1,6 +1,6 @@
-%% INSTRUCTIONS FOR LOCALIZER BLOCKS
+%% This script displays the instructions on the screen for the localizer blocks
 % -------------------------------------------------------------------------
-% CIMCYC - Universidad de Granada  - Code written by Paloma Díaz Gutiérrez y Chema G. Peñalver
+% CIMCYC - Universidad de Granada  - Code written by Paloma Dï¿½az Gutiï¿½rrez y Chema G. Peï¿½alver
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
 RestrictKeysForKbCheck(KbName('space'));
@@ -8,7 +8,7 @@ Screen('TextColor', PTB.window,  COL.black);
 %% INSTRUCTION TYPE OF BLOCK %%
 inst{1} = 'BLOQUE DE LOCALIZADOR';
 
-inst{2} = 'En este bloque, pulsa la tecla C \n\n cuando el estímulo aparezca invertido.  \n\n En caso contrario, no tienes que hacer nada';
+inst{2} = 'En este bloque, pulsa la tecla C \n\n cuando el estï¿½mulo aparezca invertido.  \n\n En caso contrario, no tienes que hacer nada';
 
 Screen('TextFont', PTB.window, CONS.insTitleFamily);
 Screen('TextSize', PTB.window, CONS.insTitleSize);
@@ -27,4 +27,3 @@ DrawFormattedText(PTB.window, '- PULSA LA BARRA ESPACIADORA PARA CONTINUAR -',..
 Screen('Flip', PTB.window);
 KbWait;
 WaitSecs(0.2);
-

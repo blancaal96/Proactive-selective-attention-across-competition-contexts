@@ -1,7 +1,7 @@
-%Identify time-frequency ROI.
+%Script using the fieldtrip functions to identify time-frequency significant ROI.
 clear
 
- 
+
 %% Load data
 dir = 'E:\Mi unidad\Experimento competition\DATA\EEG\derivatives';
 cue_hi= cell(1,36);
@@ -11,7 +11,7 @@ for sub=1:36
     cue_lo{1,sub}= load ([dir filesep 'sub-' num2str(sub, '%.2d') filesep 'eeg' filesep 'conditions' filesep 'sub-' num2str(sub,'%.2d') '_task-competition_eeg_cue_lo_timefreq.mat']);
 end
 
-%% 
+%%
 
 cfg = [];
 cfg.channel = {'Fz','FC1','Cz','FC2','F1','C1','C2','F2','FCz'};
@@ -24,7 +24,7 @@ cue_lo_avg{i} = ft_selectdata(cfg, cue_lo{i}.tf);
 end
 
 %Cluster
-alpha = 0.05;   
+alpha = 0.05;
 cfg = [];
 cfg.latency = [0 1];
 cfg.feedback = 'textbar';
@@ -43,13 +43,13 @@ end
 
 cfg.clusteralpha = alpha;         % alpha level of the sample-specific test statistic that will be used for thresholding
 cfg.numrandomization = 1000;
-cfg.design = [repmat(1:size(cue_hi,2),1,2); [repelem(1, size(cue_hi,2)), repelem(2, size(cue_hi,2))]]; %numero de trials de la condicion 1 tomados como 1 y numero de trials de la condicion 2 tomados como 2, pero dif num across sub
+cfg.design = [repmat(1:size(cue_hi,2),1,2); [repelem(1, size(cue_hi,2)), repelem(2, size(cue_hi,2))]]; %A matrix with ones representing the trials of the first condition and twos representing the trials of the second condition
 cfg.uvar = 1;
 cfg.ivar = 2;
 [stat] = ft_freqstatistics(cfg, cue_hi_avg{:}, cue_lo_avg{:}); %run cluster permutation
-    
+
 %% Plot
-    
+
 %Prepare data
 cfg = [];
 cfg.keepindividual = 'no';
@@ -87,4 +87,3 @@ if isfield(stat, 'posclusters') %Positive clusters
     xlabel('ms')
     xline(0, '--k', 'LineWidth', 2)
 end
-

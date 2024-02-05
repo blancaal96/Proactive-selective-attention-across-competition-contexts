@@ -1,12 +1,12 @@
-%% INSTRUCTIONS OF THE PRACTICE BLOCKS
+%% This script displays the instructions of the practice blocks on the screen
 % -------------------------------------------------------------------------
-% CIMCYC - Universidad de Granada  - Code written by Paloma Díaz Gutiérrez y Chema G. Peñalver
+% CIMCYC - Universidad de Granada  - Code written by Paloma Dï¿½az Gutiï¿½rrez y Chema G. Peï¿½alver
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
 
 RestrictKeysForKbCheck(KbName('space'));
-inst{1} = 'BLOQUE DE PRÁCTICAS';
-inst{2} = 'En primer lugar vas a realizar \n una práctica para que aprendas la dinámica de la tarea';
+inst{1} = 'BLOQUE DE PRï¿½CTICAS';
+inst{2} = 'En primer lugar vas a realizar \n una prï¿½ctica para que aprendas la dinï¿½mica de la tarea';
 
 %% 1. STARTING PRACTICE BLOCK
 % ----------------------------------------------------------------
@@ -21,7 +21,7 @@ DrawFormattedText(PTB.window, '- PULSA LA BARRA ESPACIADORA PARA COMENZAR -',...
     'center', PTB.screenResY-50);
 
 Screen('Flip', PTB.window);
-      
+
 while true
     [keyIsDown, secs, keyCode] = KbCheck;
     if keyIsDown

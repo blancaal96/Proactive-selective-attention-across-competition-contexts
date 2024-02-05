@@ -1,4 +1,4 @@
-%% MVPAlab TOOLBOX - (mvpa_demo.m)
+%% MVPAlab TOOLBOX - script running the decoding analyses to compare the high competition preparation vs low competition
 % -------------------------------------------------------------------------
 % Brain, Mind and Behavioral Research Center - University of Granada.
 % Contact: dlopez@ugr.es (David Lopez-Garcia)
@@ -34,5 +34,5 @@ mvpalab_savepermaps(cfg,permaps);
 mvpalab_savecfg(cfg);
 
 % %% Plot the results:
-% 
+%
 % run mvpa_plot;

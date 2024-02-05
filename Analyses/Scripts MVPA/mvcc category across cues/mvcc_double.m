@@ -1,4 +1,4 @@
-%% MVPAlab TOOLBOX - (mvpa_demo.m)
+%% MVPAlab TOOLBOX - script running the decoding analyses for the cross classification across cues for high or low competition
 % -------------------------------------------------------------------------
 % Brain, Mind and Behavioral Research Center - University of Granada.
 % Contact: dlopez@ugr.es (David Lopez-Garcia)
@@ -10,21 +10,22 @@ clear; clc;
 
 cfg = mvpalab_init();
 
-for an = 1:2
-    
+for an = 1:2 %Two decoders, one for the cross classification of cues: (faces 1 vs names 1) cross class to (faces 2 vs names 2);
+%and the other decoder: (faces 1 vs names 2) cross class to (faces 2 vs names 1)
+
     run cfg_file_advanced_double;
 
     %% Load data, generate conditions and feature extraction:
 
     [cfg,data,fv] = mvpalab_import(cfg);
-    
+
     %% Compute MVPA analysis:
 
     [result,cfg] = mvpalab_mvcc(cfg,fv);
     [permaps,cfg] = mvpalab_cpermaps(cfg,fv);
-    
-    %[cfg,diffMap,stats] = mvpalab_sfilter(cfg); %%PONERLO VARIAS VECES? SLIDING FILTER
-    
+
+    %[cfg,diffMap,stats] = mvpalab_sfilter(cfg);
+
     res.acc.ab(:,:,:,an) = result.acc.ab;
     res.acc.ba(:,:,:,an) = result.acc.ba;
     res.auc.ab(:,:,:,an) = result.auc.ab;
@@ -33,7 +34,7 @@ for an = 1:2
     per.acc.ba(:,:,:,:,an) = permaps.acc.ba;
     per.auc.ab(:,:,:,:,an) = permaps.auc.ab;
     per.auc.ba(:,:,:,:,an) = permaps.auc.ba;
-    
+
 
 end
 %% Compute permutation maps and run statistical analysis:
@@ -57,7 +58,7 @@ pur.acc(:,:,:,:,1) = permaps.acc.ab;
 pur.acc(:,:,:,:,2) = permaps.acc.ba;
 pur.auc(:,:,:,:,1) = permaps.auc.ab;
 pur.auc(:,:,:,:,2) = permaps.auc.ba;
-    
+
 
 
 result.acc = mean(rus.acc,4);

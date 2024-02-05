@@ -1,4 +1,4 @@
-%% MVPAlab TOOLBOX - (mvpa_demo.m)
+%% MVPAlab TOOLBOX - script running the decoding analyses for the cross classification across cues and conditions (high-low competition)
 % -------------------------------------------------------------------------
 % Brain, Mind and Behavioral Research Center - University of Granada.
 % Contact: dlopez@ugr.es (David Lopez-Garcia)
@@ -12,19 +12,19 @@ cfg = mvpalab_init();
 cfg.location = 'E:\Mi unidad\Experimento competition\DATA\EEG\Analisis multi\mvcc hi lo across cues';
 
 for an = 1:2
-    
+
     run cfg_file_mvcc_hi_lo_double;
 
     %% Load data, generate conditions and feature extraction:
 
     [cfg,data,fv] = mvpalab_import(cfg);
-    
+
     %% Compute MVPA analysis:
 
     [result,cfg] = mvpalab_mvcc(cfg,fv);
     [permaps,cfg] = mvpalab_cpermaps(cfg,fv);
-    
-    
+
+
     res.acc.ab(:,:,:,an) = result.acc.ab;
     res.acc.ba(:,:,:,an) = result.acc.ba;
     res.auc.ab(:,:,:,an) = result.auc.ab;
@@ -33,7 +33,7 @@ for an = 1:2
     per.acc.ba(:,:,:,:,an) = permaps.acc.ba;
     per.auc.ab(:,:,:,:,an) = permaps.auc.ab;
     per.auc.ba(:,:,:,:,an) = permaps.auc.ba;
-    
+
 
 end
 %% Compute permutation maps and run statistical analysis:
@@ -48,9 +48,8 @@ permaps.acc.ba = mean(per.acc.ba,5);
 permaps.auc.ab = mean(per.auc.ab,5);
 permaps.auc.ba = mean(per.auc.ba,5);
 
-%añadido para hacer la media a través de las direcciones, aunque puede ser
-%interesante verlo por separado también? aunque ya se ha hecho la media de
-%dos clasificadores diferentes
+%storing the data in the same variable to calculate the mean across directions of cross classification
+
 rus.acc(:,:,:,1) = result.acc.ab;
 rus.acc(:,:,:,2) = result.acc.ba;
 rus.auc(:,:,:,1) = result.auc.ab;
@@ -59,7 +58,7 @@ pur.acc(:,:,:,:,1) = permaps.acc.ab;
 pur.acc(:,:,:,:,2) = permaps.acc.ba;
 pur.auc(:,:,:,:,1) = permaps.auc.ab;
 pur.auc(:,:,:,:,2) = permaps.auc.ba;
-%     
+%
 
 
 result.acc = mean(rus.acc,4);
@@ -67,7 +66,7 @@ result.auc = mean(rus.auc,4);
 
 permaps.acc = mean(pur.acc,5);
 permaps.auc = mean(pur.auc,5);
-%fin del añadido
+
 cfg.location = 'E:\Mi unidad\Experimento competition\DATA\EEG\Analisis multi\mvcc hi lo across cues';
 mvpalab_saveresults(cfg,result);
 mvpalab_savepermaps(cfg,permaps);

@@ -1,3 +1,4 @@
+%This function needs the OUTPUT of the task as the argument, and it calculates the behavioral results of this participant segmented by condition (type of block: high competition, low competition, localizer) and congruency (val, inv)
 function [res_hb_con, res_hb_inc, res_lb_coon, res_lb_inc, res_hb, res_lb, res_loc] = behavResults (Output, BlockType, Congruency)
 
    hb = 1;
@@ -25,12 +26,12 @@ function [res_hb_con, res_hb_inc, res_lb_coon, res_lb_inc, res_hb, res_lb, res_l
     hb_val_acc = hb_acc(hb_val);
     hb_inv  = find (cell2mat(hb_congruency) == 2);
     hb_inv_acc = hb_acc(hb_inv);
-    
+
     lb_val = find (cell2mat(lb_congruency) == 1);
     lb_val_acc = lb_acc(lb_val);
     lb_inv  = find (cell2mat(lb_congruency) == 2);
     lb_inv_acc = lb_acc(lb_inv);
-    
+
     if exist ('hb_acc', 'var')
         res_hb = mean(mean(hb_acc, 'omitnan'));
     end
@@ -52,9 +53,5 @@ function [res_hb_con, res_hb_inc, res_lb_coon, res_lb_inc, res_hb, res_lb, res_l
     if exist ('lb_inv_acc', 'var')
         res_lb_inc = mean(mean(lb_inv_acc, 'omitnan'));
     end
-    
-end
-            
-        
 
-   
+end

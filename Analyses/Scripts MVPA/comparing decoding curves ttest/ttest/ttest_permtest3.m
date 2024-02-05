@@ -1,6 +1,6 @@
+%This function needs as an argument the t values of the real data and the t values of the permutations, then it compares the distributionof the t values and gives the statistics (clusters, p value threshold)
 function [stats] = ttest_permtest3(res, per)
-%ANOVA_PERTEST Summary of this function goes here
-%   Detailed explanation goes here
+
 cnt = 1;
 countp = 1;
 if size (res.p, 1)> 1
@@ -105,4 +105,3 @@ end
 sigmask_(neg_pixels) = 0;
 stats.sigmask_ = sigmask_;
 end
-

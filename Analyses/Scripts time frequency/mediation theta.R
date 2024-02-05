@@ -1,3 +1,4 @@
+#This script goes across the necessary criteria for the mediation Competition(task)- theta -Rt and performs the mediation
 #The necessary criteria before mediation.
 
 library(lme4) # for the analysis
@@ -34,7 +35,7 @@ detach("package:lmerTest", unload=TRUE)
 library(lme4)
 m.mediatorthetatask= lmer(theta~task+Congruency+(task|subject),data)
 m.complete=lmer(RT~theta+task+Congruency+(task|subject),data)
-results= mediate(model.m = m.mediatorthetatask, model.y = m.complete, 
-                              treat = "task", mediator = "theta", 
+results= mediate(model.m = m.mediatorthetatask, model.y = m.complete,
+                              treat = "task", mediator = "theta",
                               sims = 5000)
 summary(results)

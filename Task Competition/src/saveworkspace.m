@@ -1,6 +1,6 @@
-%% EVENT-RELATED POTENTIALS TEST (saveworkspace.m)
+%% This script saves the relevant variables in the workspace
 % -------------------------------------------------------------------------
-% CIMCYC - Universidad de Granada  - Code written by Paloma Díaz Gutiérrez y Chema G. Peñalver
+% CIMCYC - Universidad de Granada  - Code written by Paloma Dï¿½az Gutiï¿½rrez y Chema G. Peï¿½alver
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
 % Script for saving all the data
@@ -10,7 +10,7 @@
 finalTimeStamp = GetSecs;
 date = clock;
 SUBJECT_INFO.finalTimeStamp = [
-    int2str(date(3)) '/'... 
+    int2str(date(3)) '/'...
     int2str(date(2)) '/'...
     int2str(date(1)) ' '...
     int2str(date(4)) ':'...
@@ -27,10 +27,10 @@ if str2double(SUBJECT_INFO.id) ~= 0
         'CTB',...
         'EDATA',...
         'EPROP',...
-        'initialTimeStamp',... 
+        'initialTimeStamp',...
         'finalTimeStamp',...
         'TRIGHIST');
-     
+
 end
 
 %% 3. CLEAR THE WORKSPACE:
@@ -46,5 +46,3 @@ clear target_distractOnsetTime targetOnsetTime TRIGHIST;
 clear UpLeft1 UpLeft2 UpRight1 UpRight2;
 clear EndofExperiment isPracticeBlock;
 clear PathCurrent PRACT struct
-
-

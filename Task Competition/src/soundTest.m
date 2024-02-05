@@ -1,8 +1,8 @@
-%% EVENT-RELATED POTENTIALS TEST (soundTest.m)
+%% This script serves to test how the sound of the feedback sounds
 % -------------------------------------------------------------------------
-% David López García       
+% David Lï¿½pez Garcï¿½a
 % dlopez@ugr.es
-% CIMCYC - Universidad de Granada  - Adapted by Paloma Díaz Gutiérrez
+% CIMCYC - Universidad de Granada  - Adapted by Paloma Dï¿½az Gutiï¿½rrez
 % -------------------------------------------------------------------------
 
 %% 1. SET PATH

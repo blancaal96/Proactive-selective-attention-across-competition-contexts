@@ -1,3 +1,4 @@
+%This script is used to filter the data by 2 SD of RT and theta values
 %clear
 %csvread('E:\Mi unidad\Experimento competition\Scripts\extracting time frequency\modelpredictRTthetawithoutNaN.csv');
 
@@ -11,9 +12,9 @@ for sub=1:36
     devEst = std(datossub.RT);
     limiteArrib = media + (devEst*2); % Threshold above outliers
     limiteAbajo = media - (devEst*2); % Threshold below outliers
-    
+
     filtroOutlier = [filtroOutlier; datossub.RT > limiteAbajo & datossub.RT < limiteArrib];
-    
+
 end
 
 % counter=1;
@@ -24,7 +25,7 @@ end
 %     end
 % end
 
-%% 
+%%
 %Apply filter using 2STD on theta power
 %clearvars -except modelpredictRTthetawithoutNaN
 clear counter
@@ -35,9 +36,9 @@ for sub=1:36
     devEst = std(datossub.theta);
     limiteArrib = media + (devEst*2); % Calcula limite por arriba de los outliers
     limiteAbajo = media - (devEst*2); % Calcula limite por abajo de los outliers
-    
+
     filtroOutliertheta = [filtroOutliertheta; datossub.theta > limiteAbajo & datossub.theta < limiteArrib];
-    
+
 end
 
 % counter=1;
@@ -67,10 +68,10 @@ idx=0;
 for sub=1:36
     countertr=0;
     datossub= modelpredictRTthetawithoutNaN(modelpredictRTthetawithoutNaN.subject==sub,:);
-    
+
     idx= idx+ size(datossub,1);
     for i= (idx- size(datossub,1)+1): idx
-        if filtroOutliertheta(i)==0 ||  filtroOutlier(i)==0 
+        if filtroOutliertheta(i)==0 ||  filtroOutlier(i)==0
             countertr= countertr+1;
             counter(sub)= countertr;
         end
