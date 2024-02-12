@@ -1,10 +1,10 @@
 # Competition_EEG
-This repository contains the codes used for the work "Proactive selective attention across competition contexts" by B. Aguado-López, A. F. Palenciano, J. M.G. Peñalver, P. Díaz-Gutiérrez, D. López-García, C. Avancini, L. F. Ciria, M. Ruz. 
+This repository contains the codes used for the work "Proactive selective attention across competition contexts" by B. Aguado-López, A. F. Palenciano, J. M.G. Peñalver, P. Díaz-Gutiérrez, D. López-García, C. Avancini, L. F. Ciria, M. Ruz. The preprint can be found on this link: https://doi.org/10.1101/2024.02.06.579112
 
 Most of the code is written for Matlab, only the mediation code (/Analyses/Scripts time frequency/mediation theta.R) is for R.
 
  ## Analyses 
- The folder ###/Analyses contains subfolders for the behavioral and EEG analyses based on EEG data on BIDS format.
+ The folder /Analyses contains subfolders for the behavioral and EEG analyses based on EEG data on BIDS format. The preprocessing code for the EEG data was adapted from the scripts available in the Human Neuroscience Lab from the University of Granada GitHub repository: https://github.com/Human-Neuroscience/eeg-preprocessing.
   ### Behavioral analysis
   Inside the subfolder /Script for extracting behavioral indexes you need to run the script "behav_2.m", it will give you the results of the sample to perform statistics.
   ### Multivariate analyses of EEG data
