@@ -1,3 +1,4 @@
+%Script written by José M.G. Penalver, adapted by Blanca Aguado-López (blancaal@ugr.es)
 % Script to generate averages per condition. As arguments you always put
 % results from both ACC and RT, but only calculates one of the two,
 % depending on the flag that is written at the end. 

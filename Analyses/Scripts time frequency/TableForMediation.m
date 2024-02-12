@@ -1,3 +1,4 @@
+%Script written by Blanca Aguado-López (blancaal@ugr.es)
 %This script is used to generate a table with all the trial information for the mediation: competition- theta- RT
 %We already selected the time window of interest from the graph of time-freq averaging high and low (from the script extracting power time-freq.m)
 

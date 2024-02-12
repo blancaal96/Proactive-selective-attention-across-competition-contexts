@@ -1,3 +1,4 @@
+%Script written by José M.G. Penalver, adapted by Blanca Aguado-López (blancaal@ugr.es)
 %This script is used to calculate the behavioral indexes of each of the subjects in the sample (here we have 36 subjects) and it uses the function Def_behavResults.m to calculate the ACC and RT
 clear
 tot_subs = 36;

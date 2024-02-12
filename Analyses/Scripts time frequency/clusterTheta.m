@@ -1,3 +1,5 @@
+%Script written by Chiara Avancini, adapted by Blanca Aguado-López (blancaal@ugr.es) 
+
 %Script using the fieldtrip functions to identify time-frequency significant ROI.
 clear
 

@@ -1,3 +1,5 @@
+%Script written by Blanca Aguado-López (blancaal@ugr.es)
+
 %This script is used to assign the congruency condition of the trial to the cue in that trial.
 %This info is used for the mediation of theta
 dir = 'E:\Mi unidad\Experimento competition\DATA\EEG\derivatives';

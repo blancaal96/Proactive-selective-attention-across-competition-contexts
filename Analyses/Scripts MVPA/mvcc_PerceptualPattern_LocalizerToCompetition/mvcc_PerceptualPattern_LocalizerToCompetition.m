@@ -13,7 +13,7 @@ cfg.location = 'E:\Mi unidad\Experimento competition\DATA\EEG\Analisis multi\mvc
 
 
 
-    run cfg_file_mvcc_loc_cue_hi;
+    run cfg_PerceptualPattern_LocalizerToCompetition;
 
     %% Load data, generate conditions and feature extraction:
 

@@ -1,3 +1,5 @@
+%Script written by Blanca Aguado-López (blancaal@ugr.es)
+
 %This script performs the time-frequency analysis for each of the conditions and plots them or the mean across conditions
 %This script uses fieldtrip and eeglab functions
 clear

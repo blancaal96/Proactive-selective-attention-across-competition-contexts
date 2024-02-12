@@ -9,7 +9,7 @@ clear; clc;
 %% Initialize project and run configuration file:
 
 cfg = mvpalab_init();
-run cfg_file_advanced;
+run cfg_mvpa_competition;
 
 %% Load data, generate conditions and feature extraction:
 

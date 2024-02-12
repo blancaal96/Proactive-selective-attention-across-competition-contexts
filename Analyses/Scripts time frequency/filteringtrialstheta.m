@@ -1,3 +1,5 @@
+%Script written by Blanca Aguado-López (blancaal@ugr.es)
+
 %This script is used to filter the data by 2 SD of RT and theta values
 %clear
 %csvread('E:\Mi unidad\Experimento competition\Scripts\extracting time frequency\modelpredictRTthetawithoutNaN.csv');
@@ -34,8 +36,8 @@ for sub=1:36
     datossub= modelpredictRTthetawithoutNaN(modelpredictRTthetawithoutNaN.subject==sub,:);
     media= mean(datossub.theta);
     devEst = std(datossub.theta);
-    limiteArrib = media + (devEst*2); % Calcula limite por arriba de los outliers
-    limiteAbajo = media - (devEst*2); % Calcula limite por abajo de los outliers
+    limiteArrib = media + (devEst*2); % Calculate threshold above
+    limiteAbajo = media - (devEst*2); % Calcule threshold below
 
     filtroOutliertheta = [filtroOutliertheta; datossub.theta > limiteAbajo & datossub.theta < limiteArrib];
 
