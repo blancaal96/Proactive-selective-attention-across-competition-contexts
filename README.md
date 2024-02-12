@@ -4,7 +4,7 @@ This repository contains the codes used for the work "Proactive selective attent
 Most of the code is written for Matlab, only the mediation code (/Analyses/Scripts time frequency/mediation theta.R) is for R.
 
  ## Analyses 
- The folder ### /Analyses contains subfolders for the behavioral and EEG analyses based on EEG data on BIDS format.
+ The folder ###/Analyses contains subfolders for the behavioral and EEG analyses based on EEG data on BIDS format.
   ### Behavioral analysis
   Inside the subfolder /Script for extracting behavioral indexes you need to run the script "behav_2.m", it will give you the results of the sample to perform statistics.
   ### Multivariate analyses of EEG data
