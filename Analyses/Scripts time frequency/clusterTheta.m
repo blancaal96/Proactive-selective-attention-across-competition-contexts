@@ -1,4 +1,4 @@
-%Script written by Chiara Avancini, adapted by Blanca Aguado-López (blancaal@ugr.es) 
+%Script written by Chiara Avancini, adapted by Blanca Aguado-Lï¿½pez (blancaal@ugr.es)
 
 %Script using the fieldtrip functions to identify time-frequency significant ROI.
 clear
@@ -28,7 +28,7 @@ end
 %Cluster
 alpha = 0.05;
 cfg = [];
-cfg.latency = [0 1];
+cfg.latency = [0 1.55];
 cfg.feedback = 'textbar';
 cfg.method = 'montecarlo';       % use the Monte Carlo Method to calculate the significance probability
 cfg.correctm = 'cluster';
@@ -82,7 +82,7 @@ if isfield(stat, 'posclusters') %Positive clusters
     cfg.fontsize = 10;
     cfg.colorbar = 'no';
     cfg.zlim = [-2 2];
-    cfg.xlim= [-0.1 1.125];
+    cfg.xlim= [-0.2 1.55];
     Difference.mask = pos_int;
     ft_singleplotTFR(cfg, Difference);
     ylabel('Hz')
